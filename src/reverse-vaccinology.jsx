@@ -68,10 +68,10 @@ function Hero() {
   useEffect(() => { setTimeout(() => setVisible(true), 200); }, []);
 
   const facts = [
-    { icon: "🏥", title: "Nosocomial", desc: "Principal causa de infecções hospitalares em pacientes com ventilação mecânica e dispositivos invasivos" },
-    { icon: "💀", title: "ESKAPE", desc: "Membro do grupo ESKAPE — os 6 patógenos mais perigosos para resistência antimicrobiana segundo a OMS" },
-    { icon: "🧬", title: "Multirresistente", desc: "Possui bomba de efluxo e gene blaOXA-23 que conferem resistência a múltiplas classes de antibióticos" },
-    { icon: "🔬", title: "Sobrevivência", desc: "Consegue sobreviver em superfícies secas hospitalares por semanas, facilitando transmissão cruzada" },
+    { title: "Nosocomial", desc: "Principal causa de infecções hospitalares em pacientes com ventilação mecânica e dispositivos invasivos" },
+    { title: "ESKAPE", desc: "Integra o grupo ESKAPE de patógenos associados à resistência antimicrobiana" },
+    { title: "Multirresistente", desc: "Possui bomba de efluxo e gene blaOXA-23 que conferem resistência a múltiplas classes de antibióticos" },
+    { title: "Sobrevivência", desc: "Consegue sobreviver em superfícies secas hospitalares por semanas, facilitando transmissão cruzada" },
   ];
 
   return (
@@ -99,10 +99,10 @@ function Hero() {
         transition: "all 1s ease-out", position: "relative", zIndex: 1,
       }}>
         <div style={{
-          fontFamily: FONT, fontSize: 12, color: COLORS.danger,
-          letterSpacing: 4, marginBottom: 16, fontWeight: 700,
+          fontFamily: FONT, fontSize: 12, color: COLORS.textMuted,
+          letterSpacing: 3, marginBottom: 16, fontWeight: 600,
         }}>
-          PATÓGENO CRÍTICO — PRIORIDADE 1 OMS
+          Moraxellaceae · Cocobacilo · Gram-negativo
         </div>
         <h1 style={{
           fontFamily: FONT_BODY, fontSize: "clamp(32px, 8vw, 56px)", fontWeight: 800,
@@ -116,19 +116,10 @@ function Hero() {
           fontFamily: FONT_BODY, fontSize: "clamp(14px, 2.2vw, 18px)", color: COLORS.textDim,
           maxWidth: 600, lineHeight: 1.7, marginTop: 24,
         }}>
-          Cocobacilo gram-negativo, aeróbico e oxidase-negativa.
-          Uma das bactérias mais perigosas em ambientes hospitalares,
-          com capacidade alarmante de adquirir resistência a praticamente
-          todas as classes de antibióticos disponíveis.
+          Cocobacilo gram-negativo, aeróbico e oxidase-negativa. Frequente em
+          infecções hospitalares e amplamente capaz de adquirir resistência a
+          múltiplas classes de antibióticos.
         </p>
-        <div style={{
-          fontFamily: FONT, fontSize: 12, color: COLORS.warning,
-          marginTop: 16, padding: "8px 16px",
-          background: `${COLORS.warning}11`, borderRadius: 8,
-          border: `1px solid ${COLORS.warning}33`, display: "inline-block",
-        }}>
-          ⚠ NÃO EXISTE VACINA APROVADA — VACINOLOGIA REVERSA COMO ESTRATÉGIA
-        </div>
       </div>
 
       <div style={{
@@ -150,11 +141,14 @@ function Hero() {
             e.currentTarget.style.borderColor = COLORS.border;
             e.currentTarget.style.transform = "translateY(0)";
           }}>
-            <div style={{ fontSize: 28, marginBottom: 12 }}>{f.icon}</div>
             <div style={{
-              fontFamily: FONT, fontSize: 13, color: COLORS.accent,
-              fontWeight: 700, letterSpacing: 1, marginBottom: 8,
-            }}>{f.title.toUpperCase()}</div>
+              fontFamily: FONT, fontSize: 11, color: COLORS.textMuted,
+              fontWeight: 600, letterSpacing: 2, marginBottom: 8,
+            }}>{String(i + 1).padStart(2, "0")} / 04</div>
+            <div style={{
+              fontFamily: FONT, fontSize: 14, color: COLORS.accent,
+              fontWeight: 700, letterSpacing: 0.5, marginBottom: 10,
+            }}>{f.title}</div>
             <div style={{
               fontFamily: FONT_BODY, fontSize: 14, color: COLORS.textDim,
               lineHeight: 1.6,
